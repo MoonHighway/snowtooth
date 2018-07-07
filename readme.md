@@ -1,6 +1,8 @@
-Snowtooth GraphQL API 🎿
+Snowtooth GraphQL API 🏔
 ===============
-Snowtooth Mountain is a fake ski resort, and this is its real GraphQL API. You can run queries on the project at its website: `http://snowtooth.moonhighway.com`.
+Snowtooth Mountain is a fake ski resort, and this is its real GraphQL API. 
+
+You can try sending queries at the project website: http://snowtooth.moonhighway.com.
 
 Running the Project Locally 🚡
 -----
@@ -21,7 +23,7 @@ Want to integrate with [Apollo Engine](https://www.apollographql.com/engine)? Fo
 ENGINE_API_KEY=<your-apollo-engine-key>
 ```
 
-Then shred on some lift and trail data from the greatest fake ski resort on Earth! 
+Then shred on some lift and trail data from the greatest fake ski resort on Earth! ⛷
 
 Caveats 🚠
 ----
