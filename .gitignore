@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+assets/
+.env
+.DS_Store

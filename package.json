@@ -1,0 +1,17 @@
+{
+  "name": "snowtooth",
+  "version": "1.0.0",
+  "description": "A fake API for a fake ski resort",
+  "main": "index.js",
+  "author": "Eve Porcello <eve@moonhighway.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-engine": "1.1.2",
+    "apollo-server": "2.0.0-rc.6",
+    "dotenv": "6.0.0",
+    "graphql": "0.13.2"
+  }
+}
