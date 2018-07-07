@@ -28,4 +28,4 @@ Then shred on some lift and trail data from the greatest fake ski resort on Eart
 
 Caveats 🚠
 ----
-This is a demo app to allow students of [Moon Highway](https://www.moonhighway.com) or [GraphQL Workshop](https://www.graphqlworkshop.com) courses to interact with some data. It updates the database (JSON files) each time someone sends a mutation, so some inconsistencies may appear if multiple people are running mutations at the same time.
+This is a demo app to allow students of [Moon Highway](https://www.moonhighway.com) or [GraphQL Workshop](https://www.graphqlworkshop.com) courses to start working with GraphQL. It updates the database (JSON files) each time someone sends a mutation, so some inconsistencies may appear if multiple people are running mutations at the same time.
