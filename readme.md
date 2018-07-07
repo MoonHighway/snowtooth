@@ -1,6 +1,6 @@
 Snowtooth GraphQL API 🏔
 ===============
-Snowtooth Mountain is a fake ski resort, but that doesn't prevent it from having a real GraphQL API.
+Snowtooth Mountain is a fake ski resort, but that shouldn't prevent it from having a real GraphQL API.
 
 You write queries at the project website using GraphQL Playground: http://snowtooth.moonhighway.com. To view a list of all of the available queries, mutations, and subscriptions, click the __Schema__ tab on the right side of the screen.
 
