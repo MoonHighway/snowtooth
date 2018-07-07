@@ -6,9 +6,9 @@ Running the Project Locally 🚡
 -----
 To run the project locally, follow these instructions:
 *Basic Setup*
-1. Download/clone the repo
-2. Run `npm install` or `yarn`
-3. View [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) running on `http://localhost:4000`
+1. Download/clone the repo.
+2. Run `npm install` or `yarn` to install the dependencies.
+3. View [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) running on `http://localhost:4000`.
 
 Want to integrate with [Apollo Engine](https://www.apollographql.com/engine)? Follow these instructions:
 *Set up with Apollo Engine*
