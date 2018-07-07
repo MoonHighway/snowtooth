@@ -1,19 +1,20 @@
 Snowtooth GraphQL API 🏔
 ===============
-Snowtooth Mountain is a fake ski resort, and this is its real GraphQL API. 
+Snowtooth Mountain is a fake ski resort, but that doesn't prevent it from having a real GraphQL API.
 
-You can try sending queries at the project website: http://snowtooth.moonhighway.com.
+You can try sending queries at the project website: http://snowtooth.moonhighway.com. To view a list of all of the available queries, mutations, and subscriptions, click the __Schema__ tab on the right side of the screen.
 
 Running the Project Locally 🚡
 -----
 To run the project locally, follow these instructions:
-*Basic Setup*
+
+### Basic Setup
 1. Download/clone the repo.
 2. Run `npm install` or `yarn` to install the dependencies.
 3. View [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) running on `http://localhost:4000`.
 
+### Adding Apollo Engine
 Want to integrate with [Apollo Engine](https://www.apollographql.com/engine)? Follow these instructions:
-*Set up with Apollo Engine*
 1. Create a [free Apollo Engine account](https://engine.apollographql.com/login).
 2. Get an Apollo Engine Key.
 3. Create a `.env` file and put it at the root of the project.
