@@ -3,6 +3,10 @@ A `Lift` is a chairlift, gondola, tram, funicular, pulley, rope tow, or other me
 """
 type Lift {
     """
+    The unique identifier for a `Lift` (id: "panorama")
+    """
+    id: ID!
+    """
     The name of a `Lift` 
     """
     name: String!
@@ -84,10 +88,6 @@ enum TrailStatus {
 }
 
 type Query {
-    """
-    A list of all `Lift` objects
-    """
-    allLifts(status: LiftStatus): [Lift!]!
     """
     A list of all `Trail` objects
     """
