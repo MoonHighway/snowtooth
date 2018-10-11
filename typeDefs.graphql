@@ -7,7 +7,7 @@ type Lift {
     """
     id: ID!
     """
-    The name of a `Lift`
+    The name of a `Lift` 
     """
     name: String!
     """
@@ -126,6 +126,12 @@ type Mutation {
 }
 
 type Subscription {
+    """
+    Listens for changes in lift status
+    """
     liftStatusChange: Lift
+    """
+    Listens for changes in trail status
+    """
     trailStatusChange: Trail
 }
