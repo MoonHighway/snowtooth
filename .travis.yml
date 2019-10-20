@@ -3,11 +3,9 @@ node_js:
 - '10.16.3'
 - '12.12.0'
 after_script:
-  - npm install -g apollo
-  - apollo service:check
+  - npx apollo service:check
 after_deploy:
-  - npm install -g apollo
-  - apollo schema:publish
+  - npx apollo schema:publish
 deploy:
   provider: heroku
   api_key:
