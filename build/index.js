@@ -137,6 +137,8 @@ __webpack_require__.r(__webpack_exports__);
 var _data_lifts__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/lifts */ "./src/data/lifts.json", 1);
 /* harmony import */ var _data_trails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/trails */ "./src/data/trails.json");
 var _data_trails__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data/trails */ "./src/data/trails.json", 1);
+/* harmony import */ var _resolvers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./resolvers */ "./src/resolvers/index.js");
+
 
 
 
@@ -145,10 +147,7 @@ var _data_trails__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack
 
 __webpack_require__(/*! dotenv */ "dotenv").config();
 
-var typeDefs = fs__WEBPACK_IMPORTED_MODULE_1___default.a.readFileSync(path__WEBPACK_IMPORTED_MODULE_2___default.a.join(__dirname, "./typeDefs.graphql"), "UTF-8");
-
-var resolvers = __webpack_require__(/*! ./resolvers */ "./src/resolvers/index.js");
-
+var typeDefs = Object(fs__WEBPACK_IMPORTED_MODULE_1__["readFileSync"])(path__WEBPACK_IMPORTED_MODULE_2___default.a.join(__dirname, "./typeDefs.graphql"), "UTF-8");
 var pubsub = new apollo_server__WEBPACK_IMPORTED_MODULE_0__["PubSub"]();
 var context = {
   lifts: _data_lifts__WEBPACK_IMPORTED_MODULE_3__,
@@ -158,7 +157,7 @@ var context = {
 var PORT = process.env.PORT || 4000;
 var server = new apollo_server__WEBPACK_IMPORTED_MODULE_0__["ApolloServer"]({
   typeDefs: typeDefs,
-  resolvers: resolvers,
+  resolvers: _resolvers__WEBPACK_IMPORTED_MODULE_5__["default"],
   context: context
 });
 server.listen({
@@ -168,29 +167,27 @@ server.listen({
   return console.log("GraphQL Server is running at localhost:".concat(port));
 });
 
-if (false) {}
-
 /***/ }),
 
 /***/ "./src/resolvers/Lift.js":
 /*!*******************************!*\
   !*** ./src/resolvers/Lift.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = {
-  trailAccess: function trailAccess(root, args, _ref) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  trailAccess: function trailAccess(parent, args, _ref) {
     var trails = _ref.trails;
-    return root.trails.map(function (id) {
+    return parent.trails.map(function (id) {
       return trails.find(function (t) {
         return id === t.id;
       });
-    }).filter(function (x) {
-      return x;
     });
   }
-};
+});
 
 /***/ }),
 
@@ -198,23 +195,13 @@ module.exports = {
 /*!***********************************!*\
   !*** ./src/resolvers/Mutation.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var fs = __webpack_require__(/*! fs */ "fs");
-
-var path = __webpack_require__(/*! path */ "path");
-
-var filePath = function filePath(fileName) {
-  return path.join(__dirname, '..', 'data', fileName);
-};
-
-var save = function save(data, fileName) {
-  fs.writeFileSync(filePath(fileName), JSON.stringify(data, null, 2));
-};
-
-module.exports = {
-  setLiftStatus: function setLiftStatus(root, _ref, _ref2) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  setLiftStatus: function setLiftStatus(parent, _ref, _ref2) {
     var id = _ref.id,
         status = _ref.status;
     var lifts = _ref2.lifts,
@@ -223,12 +210,12 @@ module.exports = {
       return id === lift.id;
     });
     updatedLift.status = status;
-    pubsub.publish('lift-status-change', {
+    pubsub.publish("lift-status-change", {
       liftStatusChange: updatedLift
     });
     return updatedLift;
   },
-  setTrailStatus: function setTrailStatus(root, _ref3, _ref4) {
+  setTrailStatus: function setTrailStatus(parent, _ref3, _ref4) {
     var id = _ref3.id,
         status = _ref3.status;
     var trails = _ref4.trails,
@@ -237,12 +224,12 @@ module.exports = {
       return id === trail.id;
     });
     updatedTrail.status = status;
-    pubsub.publish('trail-status-change', {
+    pubsub.publish("trail-status-change", {
       trailStatusChange: updatedTrail
     });
     return updatedTrail;
   }
-};
+});
 
 /***/ }),
 
@@ -250,71 +237,55 @@ module.exports = {
 /*!********************************!*\
   !*** ./src/resolvers/Query.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = {
-  allLifts: function allLifts(root, _ref, _ref2) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  allLifts: function allLifts(parent, _ref, _ref2) {
     var status = _ref.status;
     var lifts = _ref2.lifts;
-
-    if (!status) {
-      return lifts;
-    } else {
-      var filteredLifts = lifts.filter(function (lift) {
-        return lift.status === status;
-      });
-      return filteredLifts;
-    }
+    return !status ? lifts : lifts.filter(function (lift) {
+      return lift.status === status;
+    });
   },
-  allTrails: function allTrails(root, _ref3, _ref4) {
+  allTrails: function allTrails(parent, _ref3, _ref4) {
     var status = _ref3.status;
     var trails = _ref4.trails;
-
-    if (!status) {
-      return trails;
-    } else {
-      var filteredTrails = trails.filter(function (trail) {
-        return trail.status === status;
-      });
-      return filteredTrails;
-    }
+    return !status ? trails : trails.filter(function (trail) {
+      return trail.status === status;
+    });
   },
-  Lift: function Lift(root, _ref5, _ref6) {
+  Lift: function Lift(parent, _ref5, _ref6) {
     var id = _ref5.id;
     var lifts = _ref6.lifts;
-    var selectedLift = lifts.filter(function (lift) {
+    return lifts.find(function (lift) {
       return id === lift.id;
     });
-    return selectedLift[0];
   },
-  Trail: function Trail(root, _ref7, _ref8) {
+  Trail: function Trail(parent, _ref7, _ref8) {
     var id = _ref7.id;
     var trails = _ref8.trails;
-    var selectedTrail = trails.filter(function (trail) {
+    return trails.find(function (trail) {
       return id === trail.id;
     });
-    return selectedTrail[0];
   },
-  liftCount: function liftCount(root, _ref9, _ref10) {
+  liftCount: function liftCount(parent, _ref9, _ref10) {
     var status = _ref9.status;
     var lifts = _ref10.lifts;
-    var i = 0;
-    lifts.map(function (lift) {
-      lift.status === status ? i++ : null;
-    });
-    return i;
+    return !status ? lifts.length : lifts.filter(function (lift) {
+      return lift.status === status;
+    }).length;
   },
-  trailCount: function trailCount(root, _ref11, _ref12) {
+  trailCount: function trailCount(parent, _ref11, _ref12) {
     var status = _ref11.status;
     var trails = _ref12.trails;
-    var i = 0;
-    trails.map(function (trail) {
-      trail.status === status ? i++ : null;
-    });
-    return i;
+    return !status ? trails.length : trails.filter(function (trail) {
+      return trail.status === status;
+    }).length;
   }
-};
+});
 
 /***/ }),
 
@@ -322,23 +293,25 @@ module.exports = {
 /*!***************************************!*\
   !*** ./src/resolvers/Subscription.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
   liftStatusChange: {
-    subscribe: function subscribe(root, data, _ref) {
+    subscribe: function subscribe(parent, data, _ref) {
       var pubsub = _ref.pubsub;
-      return pubsub.asyncIterator('lift-status-change');
+      return pubsub.asyncIterator("lift-status-change");
     }
   },
   trailStatusChange: {
-    subscribe: function subscribe(root, data, _ref2) {
+    subscribe: function subscribe(parent, data, _ref2) {
       var pubsub = _ref2.pubsub;
-      return pubsub.asyncIterator('trail-status-change');
+      return pubsub.asyncIterator("trail-status-change");
     }
   }
-};
+});
 
 /***/ }),
 
@@ -346,21 +319,21 @@ module.exports = {
 /*!********************************!*\
   !*** ./src/resolvers/Trail.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = {
-  accessedByLifts: function accessedByLifts(root, args, _ref) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  accessedByLifts: function accessedByLifts(parent, args, _ref) {
     var lifts = _ref.lifts;
-    return root.lift.map(function (id) {
+    return parent.lift.map(function (id) {
       return lifts.find(function (l) {
         return id === l.id;
       });
-    }).filter(function (x) {
-      return x;
     });
   }
-};
+});
 
 /***/ }),
 
@@ -368,26 +341,28 @@ module.exports = {
 /*!********************************!*\
   !*** ./src/resolvers/index.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var Query = __webpack_require__(/*! ./Query */ "./src/resolvers/Query.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Query__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Query */ "./src/resolvers/Query.js");
+/* harmony import */ var _Mutation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Mutation */ "./src/resolvers/Mutation.js");
+/* harmony import */ var _Subscription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Subscription */ "./src/resolvers/Subscription.js");
+/* harmony import */ var _Lift__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Lift */ "./src/resolvers/Lift.js");
+/* harmony import */ var _Trail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Trail */ "./src/resolvers/Trail.js");
 
-var Mutation = __webpack_require__(/*! ./Mutation */ "./src/resolvers/Mutation.js");
 
-var Subscription = __webpack_require__(/*! ./Subscription */ "./src/resolvers/Subscription.js");
 
-var Lift = __webpack_require__(/*! ./Lift */ "./src/resolvers/Lift.js");
 
-var Trail = __webpack_require__(/*! ./Trail */ "./src/resolvers/Trail.js");
 
-module.exports = {
-  Query: Query,
-  Mutation: Mutation,
-  Subscription: Subscription,
-  Lift: Lift,
-  Trail: Trail
-};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  Query: _Query__WEBPACK_IMPORTED_MODULE_0__["default"],
+  Mutation: _Mutation__WEBPACK_IMPORTED_MODULE_1__["default"],
+  Subscription: _Subscription__WEBPACK_IMPORTED_MODULE_2__["default"],
+  Lift: _Lift__WEBPACK_IMPORTED_MODULE_3__["default"],
+  Trail: _Trail__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
 
 /***/ }),
 
