@@ -2,16 +2,30 @@
   "name": "snowtooth",
   "version": "1.0.0",
   "description": "A fake API for a fake ski resort",
-  "main": "index.js",
-  "author": "Eve Porcello <eve@moonhighway.com>",
+  "main": "./src/index.js",
+  "author": "Moon Highway",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "build": "./node_modules/.bin/webpack",
+    "start": "nodemon --exec babel-node -r node_modules/dotenv/config ./src -e graphql,js"
   },
   "dependencies": {
-    "apollo-engine": "1.1.2",
-    "apollo-server": "2.0.0-rc.6",
-    "dotenv": "6.0.0",
-    "graphql": "0.13.2"
+    "apollo-server": "^2.9.6",
+    "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "dotenv": "^8.2.0",
+    "nodemon": "^1.19.4",
+    "raw-loader": "^3.1.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-node-externals": "^1.7.2"
   }
 }
