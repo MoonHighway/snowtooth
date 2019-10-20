@@ -19,6 +19,7 @@
     "@babel/node": "^7.6.3",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.3",
+    "apollo": "^2.20.0",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.4",
     "dotenv": "^8.2.0",
