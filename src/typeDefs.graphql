@@ -113,7 +113,7 @@ type Query {
   """
   trailCount(status: TrailStatus): Int!
   """
-  Returns the current status of `gnar`
+  Returns the status of `gnar`
   """
   gnar: String!
 }
