@@ -5,7 +5,7 @@ node_js:
 after_script:
   - npx apollo service:check
 after_deploy:
-  - npx apollo schema:publish
+  - npx apollo service:publish
 deploy:
   provider: heroku
   api_key:
