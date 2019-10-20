@@ -21,7 +21,10 @@ const PORT = process.env.PORT || 4000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context
+  context,
+  engine: process.env.ENGINE_API_KEY
+  ? { apiKey: process.env.ENGINE_API_KEY }
+  : null
 });
 
 server
