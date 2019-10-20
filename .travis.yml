@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '10.16.3'
+- '12.12.0'
+after_script:
+  - npm install -g apollo
+  - apollo service:check
+after_deploy:
+  - npm install -g apollo
+  - apollo schema:publish
+deploy:
+  provider: heroku
+  api_key:
+    secure: DM8y6PGRAiwO97q/0qwdAjrNAdBzSGkUhoG+k5O1POl7xdkKEm8ubnkozgqnyylBjxaqYn4NubWJdYAnspLQL3DU0MIJ1k0b1dVf/UmdEXq+uST75y64VquuVxzWjVDLMhczdMzKXrPygR23ON0E6kTFGpL8wiC+mQ52K7u174yqwlv03hzL3LHpT9C+EplAs2XsJvspHCtW98Z0g8wyeBj6qeKr6ZhaeDZM3HnZxWvRpXaQ6Kq57VVEfT2/f6zGhrzYZ6ZdAD8udzYHRwPTj4dbsJT4EF04C940QHDZ7vgIlCyuRV2xQlfzgz1CKzz9SdU7qWHgnF75njy8dONg7o04AaGad23iX3YSobvMVD+2CNYUgV7i6obcDTsd+8HEfDdvJ7NvaDJi+iWCskc5kh8gwtewl+tbt+q3dplLg5wYr+6I4X3wdt2hEIbSvR5HBuFSBH51YniVigoAXNG58xF8ll+oYrxEW0Lt2PHd9GwklypLCpPJutCzCH47gDwAIQyAV4kfGhd1lsWDqN6igcuwDHgKbsGkF580G6Hx8brcgL+loQoLpN2eLbaWPSEpuWOf2S1020I8YmUiSPB6PEtzu+ZUtk0+f7niItYU1754pVS/380LyrvTsAwQmlUOEFONXrAOxUAP0LB9xxbu/pQHtOPPymNp2WCruNxTcHk=
+  app: snowtooth
+  on:
+    repo: MoonHighway/snowtooth
