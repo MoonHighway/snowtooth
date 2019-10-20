@@ -1,5 +1,7 @@
 module.exports = {
   service: {
-    localSchemaFile: "./src/typeDefs.graphql"
+    endpoint: {
+      url: "http://localhost:4000"
+    }
   }
 };
