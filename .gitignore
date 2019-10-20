@@ -3,4 +3,3 @@ node_modules/
 assets/
 .env
 .DS_Store
-/build
