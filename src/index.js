@@ -22,6 +22,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context,
+  mocks: true,
+  mockEntireSchema: false,
   engine: process.env.ENGINE_API_KEY
     ? { apiKey: process.env.ENGINE_API_KEY }
     : null

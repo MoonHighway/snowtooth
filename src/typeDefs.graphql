@@ -113,9 +113,9 @@ type Query {
   """
   trailCount(status: TrailStatus): Int!
   """
-  new field
+  Is it gnarly?
   """
-  newField: String!
+  gnar: String!
 }
 
 type Mutation {

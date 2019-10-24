@@ -1,6 +1,7 @@
 export default {
   gnar: () => "gnarly",
-  allLifts: (parent, { status }, { lifts }) => !status ? lifts : lifts.filter(lift => lift.status === status),
+  allLifts: (parent, { status }, { lifts }) =>
+    !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
     !status ? trails : trails.filter(trail => trail.status === status),
   Lift: (parent, { id }, { lifts }) => lifts.find(lift => id === lift.id),
