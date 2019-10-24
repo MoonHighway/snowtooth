@@ -23,8 +23,8 @@ const server = new ApolloServer({
   resolvers,
   context,
   engine: process.env.ENGINE_API_KEY
-  ? { apiKey: process.env.ENGINE_API_KEY }
-  : null
+    ? { apiKey: process.env.ENGINE_API_KEY }
+    : null
 });
 
 server
