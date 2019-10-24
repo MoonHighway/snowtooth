@@ -112,6 +112,10 @@ type Query {
   Returns an `Int` of `Trail` objects with optional `TrailStatus` filter
   """
   trailCount(status: TrailStatus): Int!
+  """
+  new field
+  """
+  newField: String!
 }
 
 type Mutation {
