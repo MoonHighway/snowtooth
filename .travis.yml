@@ -5,8 +5,7 @@ node_js:
 before_script:
   - npm run build
   - npm start &
-  - npm install -g apollo
-  - apollo service:check --endpoint http://localhost:4000 --key $ENGINE_API_KEY || echo 'validation failed'
+  - npx apollo service:check --endpoint http://localhost:4000 --key $ENGINE_API_KEY
 after_deploy:
   - npx apollo service:push
 deploy:
