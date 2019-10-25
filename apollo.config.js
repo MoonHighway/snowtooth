@@ -1,7 +1,7 @@
 module.exports = {
   service: {
     endpoint: {
-      url: "https://snowtooth.moonhighway.com"
+      url: "http://localhost:4000"
     }
   }
 };
