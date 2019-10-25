@@ -3,10 +3,6 @@ A `Lift` is a chairlift, gondola, tram, funicular, pulley, rope tow, or other me
 """
 type Lift {
   """
-  The name of a `Lift`
-  """
-  name: String!
-  """
   The current status for a `Lift`: `OPEN`, `CLOSED`, `HOLD`
   """
   status: LiftStatus
