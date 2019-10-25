@@ -3,10 +3,6 @@ A `Lift` is a chairlift, gondola, tram, funicular, pulley, rope tow, or other me
 """
 type Lift {
   """
-  The unique identifier for a `Lift` (id: "panorama")
-  """
-  id: ID!
-  """
   The name of a `Lift`
   """
   name: String!
