@@ -5,8 +5,10 @@ node_js:
 before_script:
   - npm run build
   - npm start &
-  - npx apollo service:check --endpoint http://localhost:4000 --key $ENGINE_API_KEY
+  - npm install -g apollo
+  - apollo service:check --endpoint http://localhost:4000 --key $ENGINE_API_KEY
 after_deploy:
+  - npm install -g apollo
   - npx apollo service:push
 deploy:
   provider: heroku
