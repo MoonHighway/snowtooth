@@ -112,6 +112,15 @@ type Query {
   Returns an `Int` of `Trail` objects with optional `TrailStatus` filter
   """
   trailCount(status: TrailStatus): Int!
+  """
+  Returns the status of `gnar`
+  """
+  gnar: String!
+    @deprecated(reason: "Now we want to check in with different status")
+  """
+  Returns the status of `sick`
+  """
+  sick: String!
 }
 
 type Mutation {
