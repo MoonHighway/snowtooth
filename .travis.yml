@@ -10,6 +10,7 @@ after_script:
   - apollo service:check --endpoint http://localhost:4000 --key $ENGINE_API_KEY
 after_deploy:
   - npm install -g apollo
+  - npm install babel-node
   - apollo service:push
 deploy:
   provider: heroku
