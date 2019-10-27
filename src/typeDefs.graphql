@@ -119,7 +119,7 @@ type Query {
   """
   Returns the status of `sweet`
   """
-  sweet: String!
+  sweet: String! @deprecated(reason: "gnar covers everything now")
 }
 
 type Mutation {
