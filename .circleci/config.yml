@@ -12,6 +12,8 @@ jobs:
 
       - run: sudo npm install --global apollo
 
+      - run: npm run build
+
       - run:
           name: Starting server
           command: npm start
