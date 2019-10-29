@@ -7,6 +7,7 @@ export default {
     !status ? trails : trails.filter(trail => trail.status === status),
   Lift: (parent, { id }, { lifts }) => lifts.find(lift => id === lift.id),
   Trail: (parent, { id }, { trails }) => trails.find(trail => id === trail.id),
+  TrailStatus: (parent, { id }, { trails}) => (trails.find(trail => id === trail.id)).status,
   liftCount: (parent, { status }, { lifts }) =>
     !status
       ? lifts.length

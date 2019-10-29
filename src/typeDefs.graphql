@@ -120,6 +120,11 @@ type Query {
   Returns the status of `sweet`
   """
   sweet: String!
+  """
+  Returns the status of trail
+
+  """
+  TrailStatus: TrailStatus!
 }
 
 type Mutation {
