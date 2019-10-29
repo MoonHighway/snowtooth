@@ -1,6 +1,5 @@
 export default {
-  sweet: () => "sweet",
-  gnar: () => "gnarly",
+  sweet: () => 'sweet',
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
@@ -14,5 +13,5 @@ export default {
   trailCount: (parent, { status }, { trails }) =>
     !status
       ? trails.length
-      : trails.filter(trail => trail.status === status).length
+      : trails.filter(trail => trail.status === status).length,
 };
