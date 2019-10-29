@@ -51,7 +51,7 @@ type Trail {
   """
   The difficulty rating for a `Trail`
   """
-  difficulty: String!
+  difficulty: Dificulty!
   """
   A boolean describing whether or not a `Trail` is groomed
   """
@@ -77,6 +77,13 @@ enum LiftStatus {
   OPEN
   CLOSED
   HOLD
+}
+
+enum Dificulty {
+  GreenCircle
+  BlueSquare
+  BlackDiamond
+  DoubleBlackDiamond
 }
 
 """
