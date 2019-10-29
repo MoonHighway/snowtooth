@@ -51,7 +51,8 @@ type Trail {
   """
   The difficulty rating for a `Trail`
   """
-  difficulty: Dificulty!
+  difficulty: string @deprecated('use difficultyType')
+  difficultyType: Dificulty! 
   """
   A boolean describing whether or not a `Trail` is groomed
   """
