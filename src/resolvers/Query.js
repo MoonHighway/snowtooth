@@ -1,6 +1,8 @@
 export default {
   sweet: () => "sweet",
-  gnar: () => "gnarly",
+  gnar: () => "yo",
+  yo: () => Math.random()>.5 ? "yo": 'bye',
+  aloha: () => Math.random()>.5 ? "hi": 'bye',
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>

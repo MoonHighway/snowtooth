@@ -115,7 +115,15 @@ type Query {
   """
   Returns the status of `gnar`
   """
-  gnar: String!
+  gnar: String! @deprecated(reason: "Hi Odin is the best")
+  """
+  Returns the status of `yo`
+  """
+  yo: String!
+  """
+  Returns the status of `aloha`
+  """
+  aloha: String!
   """
   Returns the status of `sweet`
   """
