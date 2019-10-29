@@ -14,5 +14,6 @@ export default {
   trailCount: (parent, { status }, { trails }) =>
     !status
       ? trails.length
-      : trails.filter(trail => trail.status === status).length
+      : trails.filter(trail => trail.status === status).length,
+  cool: () => true
 };
