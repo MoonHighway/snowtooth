@@ -15,10 +15,6 @@ type Lift {
   """
   status: LiftStatus
   """
-  The number of people that a `Lift` can hold
-  """
-  capacity: Int!
-  """
   A boolean describing whether a `Lift` is open for night skiing
   """
   night: Boolean!
