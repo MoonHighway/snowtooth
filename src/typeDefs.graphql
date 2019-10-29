@@ -70,7 +70,7 @@ type Trail {
   accessedByLifts: [Lift!]!
 }
 
-type LiftWithNumberOfTrails = {
+type LiftWithNumberOfTrails {
   """
   The name of a `Lift`
   """
