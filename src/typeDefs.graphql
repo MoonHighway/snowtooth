@@ -30,6 +30,14 @@ type Lift {
   A list of trails that this `Lift` serves
   """
   trailAccess: [Trail!]!
+  """
+  The time this lift generally takes in minutes
+  """
+  speed: Int!
+  """
+  Average waiting time in minutes
+  """
+  wait: Int!
 }
 
 """
