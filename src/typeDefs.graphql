@@ -115,7 +115,11 @@ type Query {
   """
   Returns the status of `gnar`
   """
-  gnar: String!
+  gnar: String! @deprecated(reason: "This field was removed in favor of hereWeGo")
+  """
+  Returns the status of `hereWeGo`
+  """
+  hereWeGo: String!
   """
   Returns the status of `sweet`
   """

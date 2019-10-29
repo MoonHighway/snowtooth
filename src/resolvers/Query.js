@@ -1,6 +1,6 @@
 export default {
   sweet: () => "sweet",
-  gnar: () => "gnarly",
+  hereWeGo: () => "Here We Go... 🚗",
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
@@ -15,4 +15,4 @@ export default {
     !status
       ? trails.length
       : trails.filter(trail => trail.status === status).length
-};
+}
