@@ -25,7 +25,7 @@ type Lift {
   """
   The number of feet in elevation that a `Lift` ascends
   """
-  elevationGain: Int!
+  elevationGain: Float!
   """
   A list of trails that this `Lift` serves
   """
