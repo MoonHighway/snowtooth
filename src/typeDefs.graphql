@@ -30,6 +30,10 @@ type Lift {
   A list of trails that this `Lift` serves
   """
   trailAccess: [Trail!]!
+  """
+  Random test field
+  """
+  random: Boolean
 }
 
 """

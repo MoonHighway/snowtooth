@@ -8,11 +8,8 @@ export default {
   Lift: (parent, { id }, { lifts }) => lifts.find(lift => id === lift.id),
   Trail: (parent, { id }, { trails }) => trails.find(trail => id === trail.id),
   liftCount: (parent, { status }, { lifts }) =>
-    !status
-      ? lifts.length
-      : lifts.filter(lift => lift.status === status).length,
+    !status ? lifts.length : lifts.filter(lift => lift.status === status).length,
   trailCount: (parent, { status }, { trails }) =>
-    !status
-      ? trails.length
-      : trails.filter(trail => trail.status === status).length
+    !status ? trails.length : trails.filter(trail => trail.status === status).length,
+  random: () => true
 };
