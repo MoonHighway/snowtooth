@@ -30,6 +30,10 @@ type Lift {
   A list of trails that this `Lift` serves
   """
   trailAccess: [Trail!]!
+
+  A list of trail names that this `Lift` serves
+  """
+  trailAccess: [String!]!
 }
 
 """
