@@ -113,9 +113,15 @@ type Query {
   """
   trailCount(status: TrailStatus): Int!
   """
+  Returns the status of `gnar`
+  """
+  gnar: String!
+    @deprecated(reason: "Now we want to check gnarliness a different way!")
+  """
   Returns the status of `sweet`
   """
   sweet: String!
+  graphQLSummit: String!
 }
 
 type Mutation {

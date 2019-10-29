@@ -1,5 +1,6 @@
 export default {
   sweet: () => 'sweet',
+  graphQLSummit: () => 'fun at graphql summit',
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
