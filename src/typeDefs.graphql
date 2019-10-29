@@ -115,11 +115,15 @@ type Query {
   """
   Returns the status of `gnar`
   """
-  gnar: String!
+  gnar: String! @deprecated(reason: "whatever")
   """
   Returns the status of `sweet`
   """
   sweet: String!
+  """
+  Returns the status of `weird`
+  """
+  weird: String!
 }
 
 type Mutation {

@@ -1,5 +1,6 @@
 export default {
   sweet: () => "sweet",
+  weird: () => "weird",
   gnar: () => "gnarly",
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
