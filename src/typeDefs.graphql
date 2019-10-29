@@ -126,7 +126,7 @@ type Mutation {
   """
   Sets a `Lift` status by sending `id` and `status`
   """
-  setLiftStatus(id: ID!, status: LiftStatus!): Lift!
+
   """
   Sets a `Trail` status by sending `id` and `status`
   """
