@@ -77,6 +77,7 @@ enum LiftStatus {
   OPEN
   CLOSED
   HOLD
+  EVENT
 }
 
 """
@@ -115,7 +116,7 @@ type Query {
   """
   Returns the status of `gnar`
   """
-  gnar: String!
+  gnar: String! @deprecated(reason: "Cause Alpha")
   """
   Returns the status of `sweet`
   """

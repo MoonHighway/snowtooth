@@ -168,7 +168,7 @@
   {
     "name": "Whirlybird",
     "capacity": 2,
-    "status": "HOLD",
+    "status": "EVENT",
     "night": false,
     "elevationGain": 1003,
     "trails": [
