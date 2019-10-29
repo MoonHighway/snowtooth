@@ -120,6 +120,10 @@ type Query {
   Returns the status of `sweet`
   """
   sweet: String!
+  """
+  Returns the status of `lift cased name`
+  """
+  liftCase(id: ID!): String!
 }
 
 type Mutation {

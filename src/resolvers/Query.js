@@ -1,6 +1,7 @@
 export default {
   sweet: () => "sweet",
   gnar: () => "gnarly",
+  liftCase: (parent, { id }, { lifts }) => lifts.find(lift => id === lift.id).name.toUpperCase(),
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
