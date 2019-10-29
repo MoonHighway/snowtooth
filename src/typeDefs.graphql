@@ -30,6 +30,10 @@ type Lift {
   A list of trails that this `Lift` serves
   """
   trailAccess: [Trail!]!
+  """
+  True if the lift is operational.
+  """
+  isOperational: Boolean!
 }
 
 """
