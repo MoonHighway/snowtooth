@@ -21,7 +21,8 @@ Want to integrate with [Apollo Engine](https://www.apollographql.com/engine)? Fo
 4. In the `.env` file, add the following line:
 
 ```
-ENGINE_API_KEY=<your-apollo-engine-key>
+ENGINE_API_KEY=service:eveporcello-6318:RQYT_LtqhrYG8Taw7ORtzA
+
 ```
 
 Then shred on some lift and trail data from the greatest fake ski resort on Earth! ⛷
