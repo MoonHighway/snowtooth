@@ -79,8 +79,7 @@ type LiftWithNumberOfTrails {
   The trail count
   """
   trails: Int!
-
-};
+}
 
 """
 An enum describing the options for `LiftStatus`: `OPEN`, `CLOSED`, `HOLD`
