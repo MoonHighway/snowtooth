@@ -30,10 +30,6 @@ type Lift {
   A list of trails that this `Lift` serves
   """
   trailAccess: [Trail!]!
-  """
-  cool
-  """
-  cool: Boolean
 }
 
 """
@@ -124,6 +120,10 @@ type Query {
   Returns the status of `sweet`
   """
   sweet: String!
+  """
+  cool
+  """
+  cool: Boolean
 }
 
 type Mutation {
