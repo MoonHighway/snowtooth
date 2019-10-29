@@ -131,6 +131,9 @@ type Mutation {
   Sets a `Trail` status by sending `id` and `status`
   """
   setTrailStatus(id: ID!, status: TrailStatus!): Trail!
+
+
+  setTrailLift(id: ID!, lift: LiftStatus!): Trail!
 }
 
 type Subscription {
