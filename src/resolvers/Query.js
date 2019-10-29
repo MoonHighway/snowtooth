@@ -1,6 +1,6 @@
 export default {
   sweet: () => "sweet",
-  gnar: () => "gnarly",
+  weather: () => 32,
   allLifts: (parent, { status }, { lifts }) =>
     !status ? lifts : lifts.filter(lift => lift.status === status),
   allTrails: (parent, { status }, { trails }) =>
