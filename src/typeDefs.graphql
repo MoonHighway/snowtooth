@@ -111,7 +111,7 @@ type Query {
   """
   Returns an `Int` of `Trail` objects with optional `TrailStatus` filter
   """
-  trailCount(status: TrailStatus): Int!
+  # trailCount(status: TrailStatus): Int!
   """
   Returns the status of `gnar`
   """
