@@ -116,10 +116,6 @@ type Query {
   Returns the status of `gnar`
   """
   gnar: String!
-  """
-  Returns the status of `sweet`
-  """
-  sweet: String!
 }
 
 type Mutation {
