@@ -11,9 +11,9 @@ type Lift {
   """
   name: String!
   """
-  The current status for a `Lift`: `OPEN`, `CLOSED`, `HOLD`
+  The current status for a `Lift`: `0`, `1`, `2`
   """
-  status: LiftStatus
+  status: Int
   """
   The number of people that a `Lift` can hold
   """
