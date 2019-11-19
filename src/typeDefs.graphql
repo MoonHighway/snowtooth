@@ -116,6 +116,11 @@ type Query {
   Returns the status of `gnar`
   """
   gnar: String!
+  """
+  Returns the status of `sweet`
+  """
+  sweet: String!
+    @deprecated(reason: "Now we don't want to have a query for sweet stuff")
 }
 
 type Mutation {
