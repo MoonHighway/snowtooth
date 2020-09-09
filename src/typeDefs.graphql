@@ -113,25 +113,29 @@ type Query {
   """
   trailCount(status: TrailStatus): Int!
   """
-  Returns the status of `gnar`
-  """
-  gnar: String!
-  """
   Returns the status of `sweet`
   """
   sweet: String!
-    @deprecated(reason: "Now we don't want to have a query for sweet stuff")
+  @deprecated(
+    reason: "Now we don't want to have a query for sweet stuff"
+  )
 }
 
 type Mutation {
   """
   Sets a `Lift` status by sending `id` and `status`
   """
-  setLiftStatus(id: ID!, status: LiftStatus!): Lift!
+  setLiftStatus(
+    id: ID!
+    status: LiftStatus!
+  ): Lift!
   """
   Sets a `Trail` status by sending `id` and `status`
   """
-  setTrailStatus(id: ID!, status: TrailStatus!): Trail!
+  setTrailStatus(
+    id: ID!
+    status: TrailStatus!
+  ): Trail!
 }
 
 type Subscription {
