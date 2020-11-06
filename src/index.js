@@ -1,4 +1,7 @@
-import { ApolloServer, PubSub } from "apollo-server";
+import {
+  ApolloServer,
+  PubSub
+} from "apollo-server";
 import { readFileSync } from "fs";
 import path from "path";
 import lifts from "./data/lifts";
@@ -21,14 +24,13 @@ const PORT = process.env.PORT || 4000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context,
-  engine: process.env.ENGINE_API_KEY
-    ? { apiKey: process.env.ENGINE_API_KEY }
-    : null
+  context
 });
 
 server
   .listen({ port: PORT })
   .then(({ port }) =>
-    console.log(`GraphQL Server is running at localhost:${port}`)
+    console.log(
+      `GraphQL Server is running at localhost:${port}`
+    )
   );

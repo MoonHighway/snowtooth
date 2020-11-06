@@ -87,6 +87,11 @@ enum TrailStatus {
   CLOSED
 }
 
+"""
+This union type returns one of two types: a `Lift` or a `Trail`. When we search for a letter, we'll return a list of either `Lift` or `Trail` objects.
+"""
+union SearchResult = Lift | Trail
+
 type Query {
   """
   A list of all `Lift` objects
@@ -113,24 +118,29 @@ type Query {
   """
   trailCount(status: TrailStatus): Int!
   """
-  Returns the status of `gnar`
+  Returns a list of `SearchResult` objects based on `term` or `status`
   """
-  gnar: String!
-  """
-  Returns the status of `sweet`
-  """
-  sweet: String!
+  search(
+    term: String
+    status: LiftStatus
+  ): [SearchResult!]!
 }
 
 type Mutation {
   """
   Sets a `Lift` status by sending `id` and `status`
   """
-  setLiftStatus(id: ID!, status: LiftStatus!): Lift!
+  setLiftStatus(
+    id: ID!
+    status: LiftStatus!
+  ): Lift!
   """
   Sets a `Trail` status by sending `id` and `status`
   """
-  setTrailStatus(id: ID!, status: TrailStatus!): Trail!
+  setTrailStatus(
+    id: ID!
+    status: TrailStatus!
+  ): Trail!
 }
 
 type Subscription {
