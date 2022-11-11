@@ -11,17 +11,6 @@
     "id": "blue-bird"
   },
   {
-    "name": "Blackhawk",
-    "lift": ["astra-express", "panorama"],
-    "difficulty": "intermediate",
-    "status": "OPEN",
-    "groomed": false,
-    "snowmaking": false,
-    "trees": false,
-    "night": false,
-    "id": "blackhawk"
-  },
-  {
     "name": "Duck's Revenge",
     "lift": ["astra-express"],
     "difficulty": "intermediate",
